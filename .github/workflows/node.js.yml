@@ -17,11 +17,10 @@ jobs:
           npm install
           npm run build
           
-      - name: upload artifact
-        uses: actions/upload-artfifact@v2
-        with:
+      - uses: actions/download-artifact@master
+        with: 
           name: webpack artifacts
-          path: public/
+          path: public
   test:
     runs-on: ubuntu-latest
     strategy: 
